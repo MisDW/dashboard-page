@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid bg-white vh-100">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"><img src="img/logo.png" width="100px" height="50px"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Export</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.php"><b class="text-success">Orders</b></a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn bg-success text-white" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+        <div class="row">
+        <div class="col-3 text-bg-light">
+        <ul class="h-100 fs-5">
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-house-door-fill"></i> Home</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-inboxes-fill"></i> Orders</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-tag-fill"></i> Products</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-person-fill"></i> Customers</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-bar-chart-fill"></i> Analytics</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-basket2"></i> Marketing</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-clock-fill"></i> Discounts</li>
+                <li class="p-2 list-unstyled w-100 mb-2"><i class="bi mx-3 bi-gear-fill"></i> Configuration</li>
+            </ul>
+            </div>
+            <div class="col-9 bg-white">
+    
+                <div class="container-fluid mensaje my-4">
+                    <form action="shopifyAdmin.php" method="POST" class="input-group mb-3 m-auto">
+                        <span class="input-group-text" id="basic-addon1">Add a Products</span>
+                        <input type="text" class="form-control" placeholder="Title Example: Shirt " required aria-label="Username" aria-describedby="basic-addon1" name="titulo">
+                        <span class="input-group-text" id="basic-addon1">Description</span>
+                        <input type="text" class="form-control" placeholder="Example: Red" required aria-label="Username" aria-describedby="basic-addon1" name="descripcion">
+                        <span class="input-group-text" id="basic-addon1">Price</span>
+                        <input type="number" class="form-control" placeholder="Price Example: $30" required aria-label="Username" aria-describedby="basic-addon1" name="precio">
+                        <button type="submit" class="input-group-text btn btn-success" name="btn_add_product"><i class="bi bi-plus-circle"></i> </button>
+                    </form>
+
+                    <div class="row my-4">
+                        <div class="col-12">
+                        <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">1</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Camiseta de Verano"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Camiseta fresca ideal para el verano, disponible en varios colores"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$299.00 MXN"></td>
+        <input type="hidden" name="id" value="1">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=1" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">2</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Zapatos Deportivos"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Zapatos cómodos para correr o hacer ejercicio"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$699.00 MXN"></td>
+        <input type="hidden" name="id" value="2">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=2" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">3</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Computadora Portátil"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Ligera y potente, perfecta para trabajo y entretenimiento"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$14,999.00 MXN"></td>
+        <input type="hidden" name="id" value="3">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=3" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">4</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Teléfono Inteligente"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Con cámara de alta resolución y gran capacidad de almacenamiento"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$8,499.00 MXN"></td>
+        <input type="hidden" name="id" value="4">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=4" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">5</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Silla de Oficina Ergonómica"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Diseñada para máximo confort y soporte lumbar"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$1,199.00 MXN"></td>
+        <input type="hidden" name="id" value="5">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=5" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">6</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Libro Bestseller"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Novela emocionante que te atrapará desde la primera página"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$299.00 MXN"></td>
+        <input type="hidden" name="id" value="6">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=6" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">7</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Cámara Fotográfica"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Ideal para capturar momentos especiales con alta calidad"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$5,999.00 MXN"></td>
+        <input type="hidden" name="id" value="7">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=7" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">8</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Auriculares Inalámbricos"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Sonido de alta fidelidad sin cables molestos"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$999.00 MXN"></td>
+        <input type="hidden" name="id" value="8">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=8" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">9</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Mochila Resistente"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Con compartimentos espaciosos y material duradero"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$799.00 MXN"></td>
+        <input type="hidden" name="id" value="9">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=9" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+<tr>
+    <form action="editar_elemento.php" method="post">
+        <th scope="row">10</th>
+        <td><input class="p-1 rounded-2" type="text" name="titulo" value="Juego de Mesa Familiar"></td>
+        <td><input class="p-1 rounded-2" type="text" name="descripcion" value="Diversión asegurada para toda la familia en cualquier ocasión"></td>
+        <td><input class="p-1 rounded-2" type="text" name="precio" value="$499.00 MXN"></td>
+        <input type="hidden" name="id" value="10">
+        <td>
+            <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+            <a href="eliminar_elemento.php?id=10" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </form>
+</tr>
+    </tbody>
+</table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
